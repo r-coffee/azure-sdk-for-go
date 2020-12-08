@@ -331,7 +331,9 @@ func NewClient(accountName, accountKey, serviceBaseURL, apiVersion string, useHT
 // IsValidStorageAccount checks if the storage account name is valid.
 // See https://docs.microsoft.com/en-us/azure/storage/storage-create-storage-account
 func IsValidStorageAccount(account string) bool {
-	return validStorageAccount.MatchString(account)
+	// return validStorageAccount.MatchString(account)
+	// override since our pre-existing account doesn't follow these rules
+	return true
 }
 
 // NewAccountSASClient contructs a client that uses accountSAS authorization
